@@ -8,6 +8,8 @@ class WhackARuby < Gosu::Window
     @image = Gosu::Image.new('ruby.png')
     @x = 200
     @y = 200
+    @width = 50
+    @height = 43
   end
 
   def draw
