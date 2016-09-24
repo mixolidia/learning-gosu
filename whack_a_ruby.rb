@@ -7,6 +7,10 @@ class WhackARuby < Gosu::Window
     self.caption = 'Whack it good! Get that Ruby!'
     @image = Gosu::Image.new('ruby.png')
   end
+
+  def draw
+    
+  end
 end
 
 window = WhackARuby.new
