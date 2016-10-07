@@ -10,6 +10,8 @@ class WhackARuby < Gosu::Window
     @y = 200
     @width = 50
     @height = 43
+    @velocity_x = 5
+    @velocity_y = 5
   end
 
   def draw
