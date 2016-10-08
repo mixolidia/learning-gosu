@@ -17,6 +17,11 @@ class WhackARuby < Gosu::Window
   def draw
     @image.draw(@x - @width, @y - @height, 1)
   end
+
+  def update
+    @x += @velocity_x
+    @y += @velocity_y
+  end
 end
 
 window = WhackARuby.new
