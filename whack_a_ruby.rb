@@ -14,10 +14,12 @@ class WhackARuby < Gosu::Window
     @velocity_y = 5
   end
 
+  # below draw method displays ruby image on game window
   def draw
     @image.draw(@x - @width, @y - @height, 1)
   end
 
+  # below update method moves ruby image around window
   def update
     @x += @velocity_x
     @y += @velocity_y
