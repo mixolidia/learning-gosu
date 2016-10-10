@@ -12,6 +12,7 @@ class WhackARuby < Gosu::Window
     @height = 43
     @velocity_x = 5
     @velocity_y = 5
+    @visible = 0
   end
 
   # below draw method displays ruby image on game window
