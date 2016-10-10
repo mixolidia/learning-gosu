@@ -17,7 +17,9 @@ class WhackARuby < Gosu::Window
 
   # below draw method displays ruby image on game window
   def draw
-    @image.draw(@x - @width, @y - @height, 1)
+    if @visible > 0
+      @image.draw(@x - @width, @y - @height, 1)
+    end
   end
 
   # below update method moves ruby image around window
