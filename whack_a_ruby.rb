@@ -13,7 +13,7 @@ class WhackARuby < Gosu::Window
     @velocity_x = 5
     @velocity_y = 5
     @visible = 0
-    @hammer_image = Gosu::Image.new('images/hammer.pmg')
+    @hammer_image = Gosu::Image.new('images/hammer.png')
   end
 
   # below draw method displays ruby image on game window
@@ -21,6 +21,7 @@ class WhackARuby < Gosu::Window
     if @visible > 0
       @image.draw(@x - @width, @y - @height, 1)
     end
+    @hammer_image.draw(mouse_x - 40, mouse_y - 10, 1)
   end
 
   # below update method moves ruby image around window
