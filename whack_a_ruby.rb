@@ -13,6 +13,7 @@ class WhackARuby < Gosu::Window
     @velocity_x = 5
     @velocity_y = 5
     @visible = 0
+    @hammer_image = Gosu::Image.new('images/hammer.pmg')
   end
 
   # below draw method displays ruby image on game window
