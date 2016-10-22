@@ -1,6 +1,5 @@
 require 'gosu'
 
-# this class opens game window
 class WhackARuby < Gosu::Window
   def initialize
     super(800, 600)
@@ -17,7 +16,7 @@ class WhackARuby < Gosu::Window
     @hit = 0
   end
 
-  # below draw method displays ruby image on game window
+  # below draw method checks for instances in use
   def draw
     if @visible > 0
       @image.draw(@x - @width, @y - @height, 1)
@@ -25,7 +24,7 @@ class WhackARuby < Gosu::Window
     @hammer_image.draw(mouse_x - 40, mouse_y - 10, 1)
   end
 
-  # below update method moves ruby image around window
+  # below update method moves  images around window
   def update
     @x += @velocity_x
     @y += @velocity_y
