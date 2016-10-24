@@ -1,6 +1,7 @@
 require 'gosu'
 
 class WhackARuby < Gosu::Window
+
   def initialize
     super(800, 600)
     self.caption = 'Whack it good! Get that Ruby!'
@@ -32,6 +33,16 @@ class WhackARuby < Gosu::Window
     @velocity_y *= -1 if @y + @height / 2 > 600 || @y - @height / 2 < 0
     @visible -= 1
     @visible = 30 if @visible < -10 && rand < 0.01
+  end
+end
+
+def button_down(id)
+  if (id == Gosu::MsLeft)
+    if Gosu.distance(mouse_x, mouse_y, @x, @y) < 50 && @visible >= 0
+      @hit = 1
+    else
+      @hit = -1
+    end
   end
 end
 
