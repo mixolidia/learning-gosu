@@ -1,7 +1,6 @@
 require 'gosu'
 
 class WhackARuby < Gosu::Window
-
   def initialize
     super(800, 600)
     self.caption = 'Whack it good! Get that Ruby!'
@@ -17,14 +16,6 @@ class WhackARuby < Gosu::Window
     @hit = 0
   end
 
-  # below draw method checks for instances in use
-  def draw
-    if @visible > 0
-      @image.draw(@x - @width, @y - @height, 1)
-    end
-    @hammer_image.draw(mouse_x - 40, mouse_y - 10, 1)
-  end
-
   # below update method moves  images around window
   def update
     @x += @velocity_x
@@ -34,7 +25,6 @@ class WhackARuby < Gosu::Window
     @visible -= 1
     @visible = 30 if @visible < -10 && rand < 0.01
   end
-end
 
 def button_down(id)
   if (id == Gosu::MsLeft)
@@ -43,6 +33,24 @@ def button_down(id)
     else
       @hit = -1
     end
+  end
+end
+
+  # below draw method checks for instances in use
+  def draw
+    if @visible > 0
+      @image.draw(@x - @width, @y - @height, 1)
+    end
+    @hammer_image.draw(mouse_x - 40, mouse_y - 10, 1)
+    if @hit == 0
+      c = Gosu::Color::NONE
+    elsif @hit == 1
+      c = Gosu::Color::GREEN
+    elsif @hit == -1
+      c = Gosu::Color::RED
+    end
+    draw_quad(0, 0, c, 800, 0, c, 800, 600, c, 0, 600, c)
+    @hit = 0
   end
 end
 
