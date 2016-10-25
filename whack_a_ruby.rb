@@ -14,6 +14,8 @@ class WhackARuby < Gosu::Window
     @visible = 0
     @hammer_image = Gosu::Image.new('images/hammer.png')
     @hit = 0
+    @font = Gosu::Font.new(30)
+    @score = 0
   end
 
   # below update method moves images around window
@@ -53,8 +55,7 @@ class WhackARuby < Gosu::Window
     end
     draw_quad(0, 0, c, 800, 0, c, 800, 600, c, 0, 600, c)
     @hit = 0
-    @font = Gosu::Font.new(30)
-    @score = 0
+    @font.draw(@score.to_s, 700, 20, 2)
   end
 end
 
