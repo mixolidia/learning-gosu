@@ -30,8 +30,10 @@ class WhackARuby < Gosu::Window
     if (id == Gosu::MsLeft)
       if Gosu.distance(mouse_x, mouse_y, @x, @y) < 50 && @visible >= 0
         @hit = 1
+        @score += 5
       else
         @hit = -1
+        @score -= 1
       end
     end
   end
