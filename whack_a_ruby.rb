@@ -16,7 +16,7 @@ class WhackARuby < Gosu::Window
     @hit = 0
   end
 
-  # below update method moves  images around window
+  # below update method moves images around window
   def update
     @x += @velocity_x
     @y += @velocity_y
@@ -26,15 +26,15 @@ class WhackARuby < Gosu::Window
     @visible = 30 if @visible < -10 && rand < 0.01
   end
 
-def button_down(id)
-  if (id == Gosu::MsLeft)
-    if Gosu.distance(mouse_x, mouse_y, @x, @y) < 50 && @visible >= 0
-      @hit = 1
-    else
-      @hit = -1
+  def button_down(id)
+    if (id == Gosu::MsLeft)
+      if Gosu.distance(mouse_x, mouse_y, @x, @y) < 50 && @visible >= 0
+        @hit = 1
+      else
+        @hit = -1
+      end
     end
   end
-end
 
   # below draw method checks for instances in use
   def draw
@@ -51,6 +51,8 @@ end
     end
     draw_quad(0, 0, c, 800, 0, c, 800, 600, c, 0, 600, c)
     @hit = 0
+    @font = Gosu::Font.new(30)
+    @score = 0
   end
 end
 
