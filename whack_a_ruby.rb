@@ -26,6 +26,7 @@ class WhackARuby < Gosu::Window
     @velocity_y *= -1 if @y + @height / 2 > 600 || @y - @height / 2 < 0
     @visible -= 1
     @visible = 30 if @visible < -10 && rand < 0.01
+    @time_left = (100 - (Gosu.milliseconds /1000))
   end
 
   def button_down(id)
