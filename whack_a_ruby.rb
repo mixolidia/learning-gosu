@@ -21,14 +21,16 @@ class WhackARuby < Gosu::Window
   end
 
   def update
-    @x += @velocity_x
-    @y += @velocity_y
-    @velocity_x *= -1 if @x + @width / 2 > 800 || @x - @width / 2 < 0
-    @velocity_y *= -1 if @y + @height / 2 > 600 || @y - @height / 2 < 0
-    @visible -= 1
-    @visible = 30 if @visible < -10 && rand < 0.01
-    @time_left = (100 - ((Gosu.milliseconds - @start_time) / 1000))
-    @playing = false if @time_left < 0
+    if @playing
+      @x += @velocity_x
+      @y += @velocity_y
+      @visible -= 1
+      @time_left = (100 - ((Gosu.milliseconds - @start_time) / 1000))
+      @playing = false if @time_left < 0
+      @velocity_x *= -1 if @x + @width / 2 > 800 || @x - @width / 2 < 0
+      @velocity_y *= -1 if @y + @height / 2 > 600 || @y - @height / 2 < 0
+      @visible = 30 if @visible < -10 && rand < 0.01
+    end
   end
 
   def button_down(id)
@@ -41,6 +43,13 @@ class WhackARuby < Gosu::Window
           @hit = -1
           @score -= 1
         end
+      end
+    else
+      if (id == Gosu::KbSpace)
+        @playing = true
+        @visible = -10
+        @start_time = Gosu.milliseconds
+        @score = 0
       end
     end
   end
