@@ -1,4 +1,2 @@
-Whack-A-Ruby
-
-This is me learning how to make 2D games!
+This is me learning how to make 2D games with Gosu!
 YaY
