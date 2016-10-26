@@ -57,7 +57,7 @@ class WhackARuby < Gosu::Window
     draw_quad(0, 0, c, 800, 0, c, 800, 600, c, 0, 600, c)
     @hit = 0
     # @font.draw(@score.to_s, 700, 20, 2)
-    @font.draw(@time_left.to_s, 20, 20, 20)
+    @font.draw(@time_left.to_s, 20, 20, 2)
   end
 end
 
