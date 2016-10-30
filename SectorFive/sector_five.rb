@@ -9,5 +9,9 @@ class SectorFive < Gosu::Window
   end
 end
 
+def draw
+  @player.draw
+end
+
 window = SectorFive.new
 window.show
