@@ -2,7 +2,7 @@ class Player
   def initialize(window)
     @x = 200
     @y = 200
-    @angle = o
+    @angle = 0
     @image = Gosu::Image.new('image/ship.png')
   end
 
